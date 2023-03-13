@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.google.gson.Gson;
 import com.yupi.yuso.common.ErrorCode;
+import com.yupi.yuso.common.ResultUtils;
 import com.yupi.yuso.constant.CommonConstant;
 import com.yupi.yuso.exception.BusinessException;
 import com.yupi.yuso.exception.ThrowUtils;
@@ -115,7 +116,7 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
         Long notId = postQueryRequest.getNotId();
         // 拼接查询条件
         if (StringUtils.isNotBlank(searchText)) {
-            queryWrapper.like("title", title).or().like("content", content);
+            queryWrapper.like("title", searchText).or().like("content", searchText);
         }
         queryWrapper.like(StringUtils.isNotBlank(title), "title", title);
         queryWrapper.like(StringUtils.isNotBlank(content), "content", content);
@@ -307,6 +308,15 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
         }).collect(Collectors.toList());
         postVOPage.setRecords(postVOList);
         return postVOPage;
+    }
+
+    @Override
+    public Page<PostVO> listPostVOByPage(PostQueryRequest postQueryRequest, HttpServletRequest request) {
+        long current = postQueryRequest.getCurrent();
+        long pageSize = postQueryRequest.getPageSize();
+        Page<Post> postPage = this.page(new Page<>(current, pageSize),
+                this.getQueryWrapper(postQueryRequest));
+        return this.getPostVOPage(postPage, request);
     }
 
 }
