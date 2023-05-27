@@ -1,5 +1,7 @@
 package com.yupi.yuso;
 
+// 原_创 [鱼_皮](https://space.bilibili.com/12890453/)
+
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

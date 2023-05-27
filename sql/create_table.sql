@@ -54,6 +54,8 @@ create table if not exists post_thumb
     index idx_userId (userId)
 ) comment '帖子点赞';
 
+-- https://t.zsxq.com/0emozsIJh
+
 -- 帖子收藏表（硬删除）
 create table if not exists post_favour
 (

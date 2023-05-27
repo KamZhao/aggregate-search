@@ -26,6 +26,8 @@ public class WxOpenConfig {
 
     private WxMpService wxMpService;
 
+    // https://space.bilibili.com/12890453/
+
     /**
      * 单例模式（不用 @Bean 是为了防止和公众号的 service 冲突）
      *

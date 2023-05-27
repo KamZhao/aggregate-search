@@ -52,5 +52,7 @@ public class LogInterceptor {
         log.info("request end, id: {}, cost: {}ms", requestId, totalTimeMillis);
         return result;
     }
+
+    // https://www.code-nav.cn/
 }
 

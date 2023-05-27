@@ -30,6 +30,8 @@ public class AuthInterceptor {
     @Resource
     private UserService userService;
 
+    // 本项目_所属 [程序员鱼皮](https://yupi.icu/)
+
     /**
      * 执行拦截
      *

@@ -24,3 +24,4 @@ public @interface AuthCheck {
 
 }
 
+// https://yupi.icu/

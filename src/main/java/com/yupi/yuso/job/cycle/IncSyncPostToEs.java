@@ -29,6 +29,8 @@ public class IncSyncPostToEs {
     @Resource
     private PostEsDao postEsDao;
 
+    // 原创_项目 [鱼皮](https://github.com/liyupi)
+
     /**
      * 每分钟执行一次
      */

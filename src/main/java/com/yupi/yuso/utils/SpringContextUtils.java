@@ -17,6 +17,8 @@ public class SpringContextUtils implements ApplicationContextAware {
 
     private static ApplicationContext applicationContext;
 
+    // 讲师 [coder_鱼_皮](https://space.bilibili.com/12890453/)
+
     @Override
     public void setApplicationContext(@NotNull ApplicationContext applicationContext) throws BeansException {
         SpringContextUtils.applicationContext = applicationContext;
