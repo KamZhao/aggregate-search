@@ -43,10 +43,10 @@ public class PictureServiceImpl implements PictureService {
             String m = element.select(".iusc").get(0).attr("m");
             Map<String, Object> map = JSONUtil.toBean(m, Map.class);
             String murl = (String) map.get("murl");
-//            System.out.println(murl);
+//          System.out.println(murl);
             // 取标题
             String title = element.select(".inflnk").get(0).attr("aria-label");
-//            System.out.println(title);
+//          System.out.println(title);
             Picture picture = new Picture();
             picture.setTitle(title);
             picture.setUrl(murl);
